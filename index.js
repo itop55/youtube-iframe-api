@@ -29,7 +29,8 @@ function createVideo(playerId, videoId, playBtn/*, stopBtn*/) {
     playerVars: {
       modestbranding: 1,
       rel: 0,
-      showinfo: 0
+      showinfo: 0,
+      origin: 'https://itop55.github.io'
     },
     events: {
       'onStateChange': onPlayerStateChange
