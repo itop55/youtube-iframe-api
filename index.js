@@ -42,6 +42,7 @@ function createVideo(playerId, videoId, playBtn/*, stopBtn*/) {
       case 0:
         //видео закончилось
         playBtn.classList.remove('hide')
+        videoPoster.classList.remove('hide')
         break;
       case 1:
         //воспроизведение видео
@@ -70,7 +71,7 @@ function createVideo(playerId, videoId, playBtn/*, stopBtn*/) {
   btnContainer.appendChild(playBtn)
   /*btnContainer.appendChild(stopBtn)*/
   let videoContainer = document.querySelector(`.${playerId}`);
-  let videoPoster = document.querySelector('.video-poster');
+  let videoPoster = videoContainer.querySelector('.video-poster');
   videoContainer.appendChild(btnContainer)
 }
 
