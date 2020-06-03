@@ -59,6 +59,8 @@ function createVideo(playerId, videoId, playBtn/*, stopBtn*/) {
   // Запуск видео
   playBtn.onclick = () => {
     player.playVideo()
+    playBtn.classList.add('hide')
+    videoPoster.classList.add('hide')
   }
 
  /* // Остановка видео
