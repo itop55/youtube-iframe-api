@@ -30,7 +30,7 @@ function createVideo(playerId, videoId, playBtn/*, stopBtn*/) {
       modestbranding: 1,
       rel: 0,
       showinfo: 0,
-      origin: 'https://itop55.github.io'
+      iv_load_policy: 3,
     },
     events: {
       'onStateChange': onPlayerStateChange
@@ -59,8 +59,10 @@ function createVideo(playerId, videoId, playBtn/*, stopBtn*/) {
   // Запуск видео
   playBtn.onclick = () => {
     player.playVideo()
-    playBtn.classList.add('hide')
-    videoPoster.classList.add('hide')
+    setTimeout(()=> {
+      playBtn.classList.add('hide')
+      videoPoster.classList.add('hide')
+    }, 150)
   }
 
  /* // Остановка видео
@@ -87,7 +89,7 @@ function createAllIframe(arrVideoId) {
 
 // Запускае функцию после загрузки страницы
 document.onreadystatechange = function(){
-    if(document.readyState === 'complete'){
+    if(document.readyState === 'complete' && allVideoAndPlayerId.length){
       createAllIframe(allVideoAndPlayerId)
     }
 }
